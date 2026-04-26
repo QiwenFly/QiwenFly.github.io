@@ -2,8 +2,8 @@
 .my-floating-social {
   position: fixed;
   bottom: 40px;
-  right: 80px; /* 设置为80px是为了避开Fluid自带的"回到顶部"箭头，你可以根据喜好微调 */
-  background: rgba(255, 255, 255, 0.9);
+  left: 40px; /* 设置为40px是为了避开Fluid自带的"回到顶部"箭头，你可以根据喜好微调 */ 
+  background: rgba(241, 114, 114, 0.9);
   backdrop-filter: blur(10px); /* 毛玻璃效果 */
   padding: 10px 20px;
   border-radius: 50px;
