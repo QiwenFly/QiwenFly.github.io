@@ -1,0 +1,88 @@
+/* 1. 悬浮药丸容器 */
+.my-floating-social {
+  position: fixed;
+  bottom: 40px;
+  right: 80px; /* 设置为80px是为了避开Fluid自带的"回到顶部"箭头，你可以根据喜好微调 */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+  z-index: 999;
+  align-items: center;
+}
+
+/* 2. 完美适配夜间模式 */
+[data-user-color-scheme="dark"] .my-floating-social {
+  background: rgba(40, 44, 52, 0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* 3. 图标基础样式 */
+.my-floating-social a, .my-floating-social .social-item {
+  color: var(--text-color, #333);
+  font-size: 22px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.my-floating-social a:hover, .my-floating-social .social-item:hover {
+  color: #1abc9c; /* 鼠标悬浮时图标变色 */
+}
+
+/* 4. 隐藏的弹出名片 */
+.my-floating-social .social-card {
+  display: none;
+  position: absolute;
+  bottom: 45px; /* 向上浮出 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  background: var(--board-bg-color, #fff);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  padding: 15px;
+  text-align: center;
+  animation: fadeInBottom 0.3s ease; /* 弹出的柔和动画 */
+}
+
+/* 5. 鼠标放上去时显示名片 */
+.my-floating-social .social-item:hover .social-card {
+  display: block;
+}
+
+.social-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.social-card .desc {
+  font-size: 13px;
+  margin-top: 10px;
+  color: var(--text-color, #333);
+}
+
+@keyframes fadeInBottom {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+
+/* 竖线分隔符样式 */
+.my-floating-social .social-divider {
+  width: 1px;
+  height: 18px; /* 竖杠的高度 */
+  background-color: #ccc; /* 竖杠的颜色（浅灰） */
+  margin: 0 5px; /* 竖杠左右的间距，可以自己微调 */
+}
+
+/* 夜间模式适配，让竖杠变暗一点 */
+[data-user-color-scheme="dark"] .my-floating-social .social-divider {
+  background-color: #666;
+}
