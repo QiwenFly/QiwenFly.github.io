@@ -100,36 +100,46 @@
 
 
 /* =========================================
-   二、 首页文章列表“独立卡片化”改造
+   二、 首页文章列表“独立卡片化”究极进化版
 ========================================= */
 
-/* 1. 日间模式卡片（双层阴影打造高级立体感） */
+/* 1. 日间模式：强化边界，让框框极其明显且高级 */
 .index-card {
   background-color: #ffffff !important;
-  border-radius: 12px !important;
+  border-radius: 16px !important; /* 调整为更现代的大圆角 */
   padding: 1.5rem 2rem !important;
   margin-bottom: 2rem !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 10px 24px rgba(0,0,0,0.04) !important; 
-  border: 1px solid rgba(0,0,0,0.03) !important; /* 极弱的物理边框 */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* 丝滑动画曲线 */
+  
+  /* 重点1：加深边框颜色，明确卡片的物理边界 */
+  border: 1px solid rgba(0, 0, 0, 0.08) !important; 
+  /* 重点2：采用双层阴影，一层控制边缘锐利度，一层控制弥散立体感 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0,0,0,0.04) !important; 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
 }
 
+/* 日间悬浮：拉大阴影，产生强烈的“按压回弹”浮动感 */
 .index-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 16px 32px rgba(0,0,0,0.08) !important; 
+  transform: translateY(-5px) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important; /* 悬浮时边框微微加深 */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0,0,0,0.06) !important; 
 }
 
-/* 2. 夜间模式卡片（扁平、去边框、去发光） */
+/* 2. 夜间模式：重塑暗黑美学（高光描边 + 透明提亮） */
 [data-user-color-scheme="dark"] .index-card {
-  background-color: #212325 !important; /* 纯正的深灰黑色，不带透明度 */
-  border: none !important; /* 彻底砍掉边框，消除发光感 */
-  box-shadow: none !important; /* 日常状态下完全没有阴影，更扁平沉稳 */
+  /* 重点1：放弃使用固定的灰色，改用 4% 透明度的纯白叠加。这样卡片永远会比底层画板亮一个完美的层级，告别“死黑” */
+  background-color: rgba(255, 255, 255, 0.04) !important; 
+  /* 重点2：夜间高级感的灵魂所在——添加极细的半透明白边，模拟高级设备的玻璃切割边缘 */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important; 
+  /* 重点3：夜间模式的阴影必须重且黑，压住底部的发光感 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important; 
 }
 
+/* 夜间悬浮：点亮高光 */
 [data-user-color-scheme="dark"] .index-card:hover {
-  background-color: #282a2d !important; /* 悬浮时本身变亮一点点 */
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8) !important; /* 纯黑重阴影，增加物理浮动感 */
+  background-color: rgba(255, 255, 255, 0.08) !important; /* 悬浮时自身亮度提高 */
+  border: 1px solid rgba(255, 255, 255, 0.18) !important; /* 边缘高光变亮，产生互动感 */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7) !important; 
+  transform: translateY(-5px) !important;
 }
 
 /* 3. 隐藏 Fluid 默认自带的分割横线 */
