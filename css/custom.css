@@ -1,28 +1,33 @@
-/* 1. 悬浮药丸容器 */
+/* =========================================
+   一、 左下角悬浮社交面板改造
+========================================= */
+
+/* 1. 悬浮药丸容器（日间） */
 .my-floating-social {
   position: fixed;
   bottom: 40px;
-  left: 40px; /* 设置为40px是为了避开Fluid自带的"回到顶部"箭头，你可以根据喜好微调 */ 
-  background: rgba(241, 114, 114, 0.9);
-  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+  left: 40px; 
+  background: rgba(255, 255, 255, 0.85) !important; 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
   padding: 10px 20px;
   border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important; 
   display: flex;
   gap: 20px;
   z-index: 999;
   align-items: center;
 }
 
-/* 2. 完美适配夜间模式 */
+/* 2. 完美适配夜间模式容器（夺回颜色控制权） */
 [data-user-color-scheme="dark"] .my-floating-social {
-  background: rgba(40, 44, 52, 0.9);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background: rgba(35, 37, 41, 0.95) !important; /* 纯正的暗灰背景 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
 }
 
-/* 3. 图标基础样式 */
+/* 3. 图标基础样式（强制日间深色） */
 .my-floating-social a, .my-floating-social .social-item {
-  color: var(--text-color, #333);
+  color: #3c4043 !important; /* 日间深灰色图标 */
   font-size: 22px;
   cursor: pointer;
   position: relative;
@@ -32,11 +37,18 @@
   transition: color 0.2s;
 }
 
-.my-floating-social a:hover, .my-floating-social .social-item:hover {
-  color: #1abc9c; /* 鼠标悬浮时图标变色 */
+/* 4. 夜间模式的图标颜色（强制浅色，保证清晰可见） */
+[data-user-color-scheme="dark"] .my-floating-social a, 
+[data-user-color-scheme="dark"] .my-floating-social .social-item {
+  color: #e8eaed !important; 
 }
 
-/* 4. 隐藏的弹出名片 */
+/* 5. 统一鼠标悬浮时的点缀色（青绿色） */
+.my-floating-social a:hover, .my-floating-social .social-item:hover {
+  color: #1abc9c !important; 
+}
+
+/* 6. 隐藏的弹出二维码名片 */
 .my-floating-social .social-card {
   display: none;
   position: absolute;
@@ -52,7 +64,7 @@
   animation: fadeInBottom 0.3s ease; /* 弹出的柔和动画 */
 }
 
-/* 5. 鼠标放上去时显示名片 */
+/* 7. 鼠标放上去时显示名片 */
 .my-floating-social .social-item:hover .social-card {
   display: block;
 }
@@ -73,16 +85,81 @@
   to { opacity: 1; transform: translate(-50%, 0); }
 }
 
-
-/* 竖线分隔符样式 */
+/* 8. 竖线分隔符样式 */
 .my-floating-social .social-divider {
   width: 1px;
   height: 18px; /* 竖杠的高度 */
   background-color: #ccc; /* 竖杠的颜色（浅灰） */
-  margin: 0 5px; /* 竖杠左右的间距，可以自己微调 */
+  margin: 0 5px; 
 }
 
-/* 夜间模式适配，让竖杠变暗一点 */
+/* 9. 夜间模式适配，让竖杠变暗一点 */
 [data-user-color-scheme="dark"] .my-floating-social .social-divider {
   background-color: #666;
+}
+
+
+/* =========================================
+   二、 首页文章列表“独立卡片化”改造
+========================================= */
+
+/* 1. 日间模式卡片（双层阴影打造高级立体感） */
+.index-card {
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 1.5rem 2rem !important;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 10px 24px rgba(0,0,0,0.04) !important; 
+  border: 1px solid rgba(0,0,0,0.03) !important; /* 极弱的物理边框 */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* 丝滑动画曲线 */
+}
+
+.index-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 16px 32px rgba(0,0,0,0.08) !important; 
+}
+
+/* 2. 夜间模式卡片（扁平、去边框、去发光） */
+[data-user-color-scheme="dark"] .index-card {
+  background-color: #212325 !important; /* 纯正的深灰黑色，不带透明度 */
+  border: none !important; /* 彻底砍掉边框，消除发光感 */
+  box-shadow: none !important; /* 日常状态下完全没有阴影，更扁平沉稳 */
+}
+
+[data-user-color-scheme="dark"] .index-card:hover {
+  background-color: #282a2d !important; /* 悬浮时本身变亮一点点 */
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8) !important; /* 纯黑重阴影，增加物理浮动感 */
+}
+
+/* 3. 隐藏 Fluid 默认自带的分割横线 */
+.index-card + hr, 
+.index-card hr {
+  display: none !important;
+}
+
+
+/* =========================================
+   三、 标签页文字颜色优化
+========================================= */
+
+/* 1. 日间模式：统一加深标签颜色为深蓝灰色 */
+.tagcloud a {
+  color: #34495e !important; 
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* 2. 鼠标悬浮时变成青绿色 */
+.tagcloud a:hover {
+  color: #1abc9c !important; 
+}
+
+/* 3. 夜间模式适配：为了防止日间深色字在夜间看不清，改回浅色 */
+[data-user-color-scheme="dark"] .tagcloud a {
+  color: #c4c6c9 !important;
+}
+
+[data-user-color-scheme="dark"] .tagcloud a:hover {
+  color: #1abc9c !important;
 }
