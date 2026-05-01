@@ -359,17 +359,22 @@
             
               <div class="markdown-body">
                 
-                <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>蓝桥杯比完已经有一段时间了，出成绩也有好几天了，侥幸拿了软件B组的省一，记录一下我的第一次比较大的比赛的感受。</p>
-<h1 id="赛前"><a href="#赛前" class="headerlink" title="赛前"></a>赛前</h1><p>还记得蓝桥杯开始报名的时候，听说报名费300块，冷静了好几天，征求了学姐的意见，最后还是狠下心报了名。</p>
+                <h1 id="写在前面">写在前面</h1>
+<p>蓝桥杯比完已经有一段时间了，出成绩也有好几天了，侥幸拿了软件B组的省一，记录一下我的第一次比较大的比赛的感受。</p>
+<h1 id="赛前">赛前</h1>
+<p>还记得蓝桥杯开始报名的时候，听说报名费300块，冷静了好几天，征求了学姐的意见，最后还是狠下心报了名。</p>
 <p>既然报了名，就跟着学长学姐们好好训练了（有时也在划水，很多时候都在划水，都要划出太平洋了），还好没掉队。学了学各种比较基础的算法，刷了不少题，让自己上场前没那么心虚吧。</p>
 <p>比赛前学校因为疫情的缘故由线下变成线上了，统一的机房比赛变成了宿舍比赛，心态有点崩吧，但是还是得好好比（在这里非常感谢我靠谱的舍友们提供了一个非常安静的比赛环境）。赛前复习了一下学过的算法，调试了设备，比赛前一晚睡了个好觉。</p>
-<h1 id="比赛当天"><a href="#比赛当天" class="headerlink" title="比赛当天"></a>比赛当天</h1><p>比赛当天吃了早饭，吃了最喜欢的老豆腐和油条。</p>
+<h1 id="比赛当天">比赛当天</h1>
+<p>比赛当天吃了早饭，吃了最喜欢的老豆腐和油条。</p>
 <p>心情略有紧张，毕竟是第一次参加这么大的比赛，但是看到题目的时候就很快进入了状态。</p>
 <p>看了看题目的比例，两个填空和八个大题，我当时的比赛策略是稳中求胜，把填空和我有把握的几个大题写了写，检查了几遍才去写其他的题。</p>
 <p>然后这时候就到了各种暴力各种骗分的时候了，为了骗分我是用出了全身解数，最后在规定时间把试卷交上了。</p>
-<h1 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h1><p>比赛完，整个人感觉累瘫了，脑子嗡嗡响，什么都不想干。</p>
+<h1 id="赛后">赛后</h1>
+<p>比赛完，整个人感觉累瘫了，脑子嗡嗡响，什么都不想干。</p>
 <p>不过自己也尽力了，没留什么遗憾吧。</p>
-<h1 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h1><p>一开始用的dev5.40，还行吧，换成dev5.11一点都不顺手，适应了好久，终于在比完赛之后直接一波更新成了dev6.3。</p>
+<h1 id="小总结">小总结</h1>
+<p>一开始用的dev5.40，还行吧，换成dev5.11一点都不顺手，适应了好久，终于在比完赛之后直接一波更新成了dev6.3。</p>
 <p>不得不说，6.3确实稳定了一点，给自己的编译器换上了自己喜欢的风格，我最喜欢的颜色混搭，编程真的挺有意思的，继续加油！</p>
 <p>最后，还是要好好努力，这次在省一末，下次一定要去中游，好好补一补题然后准备国赛，要继续加油了！</p>
 <p>付出虽然不一定有收获，但要以最高的要求去训练，冲就完了！！！</p>
@@ -569,6 +574,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -858,6 +869,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

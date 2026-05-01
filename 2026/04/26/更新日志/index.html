@@ -304,7 +304,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          524 字
+          509 字
         
       </span>
     
@@ -359,29 +359,35 @@
             
               <div class="markdown-body">
                 
-                <h1 id="2026-4-22"><a href="#2026-4-22" class="headerlink" title="2026.4.22"></a>2026.4.22</h1><ol>
-<li>根据教程搭建此博客<br>参考博客地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程</a></li>
-<li>将【2026.4.11 - 蓝桥杯山东省赛（软件类C&#x2F;C++研究生组）- 游记】从 CSDN 搬运到此博客</li>
+                <h1 id="2026.4.22">2026.4.22</h1>
+<ol>
+<li>根据教程搭建此博客<br>
+参考博客地址：<a target="_blank" rel="noopener" href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程</a></li>
+<li>将【2026.4.11 - 蓝桥杯山东省赛（软件类C/C++研究生组）- 游记】从 CSDN 搬运到此博客</li>
 </ol>
 <hr>
-<h1 id="2026-4-25"><a href="#2026-4-25" class="headerlink" title="2026.4.25"></a>2026.4.25</h1><ol>
+<h1 id="2026.4.25">2026.4.25</h1>
+<ol>
 <li>学习博客置顶功能，将置顶功能添加到博客中</li>
 <li>将【2025.7 - 【梦熊联盟×原始人编程】青岛信息学奥赛暑期夏令营 - 打工记】从 CSDN 搬运到此博客</li>
 </ol>
 <hr>
-<h1 id="2026-4-26"><a href="#2026-4-26" class="headerlink" title="2026.4.26"></a>2026.4.26</h1><ol>
-<li>学习博客评论功能，将评论功能添加到博客中<br>参考博客地址：<a target="_blank" rel="noopener" href="https://jachinzhang1.github.io/2025/02/04/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo添加评论功能</a></li>
+<h1 id="2026.4.26">2026.4.26</h1>
+<ol>
+<li>学习博客评论功能，将评论功能添加到博客中<br>
+参考博客地址：<a target="_blank" rel="noopener" href="https://jachinzhang1.github.io/2025/02/04/hexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">Hexo添加评论功能</a></li>
 <li>添加左下角“悬浮社交图标面板”组件</li>
 <li>将【2024.12 - 考研初试 - 游记】从 CSDN 搬运到此博客</li>
 <li>优化主页的视觉设计，加入了主页博文独立卡片视觉设计</li>
 <li>优化了在“日间模式”和“夜间模式”下的一些视觉设计</li>
 </ol>
 <hr>
-<h1 id="2026-5-1"><a href="#2026-5-1" class="headerlink" title="2026.5.1"></a>2026.5.1</h1><ol>
-<li>将【2022.4.9 - 蓝桥杯山东省赛（软件类C&#x2F;C++B组） - 游记】从 CSDN 搬运到此博客</li>
+<h1 id="2026.5.1">2026.5.1</h1>
+<ol>
+<li>将【2022.4.9 - 蓝桥杯山东省赛（软件类C/C++B组） - 游记】从 CSDN 搬运到此博客</li>
 <li>将【2022.4.23 - CCCC团队程序设计天梯赛（华山论剑组） - 游记】从 CSDN 搬运到此博客</li>
 <li>将【2025.4.19 - CCCC团队程序设计天梯赛（华山论剑组） - 游记】从 CSDN 搬运到此博客</li>
-<li>更新【2026.4.11 - 蓝桥杯山东省赛（软件类C&#x2F;C++研究生组）- 游记】</li>
+<li>更新【2026.4.11 - 蓝桥杯山东省赛（软件类C/C++研究生组）- 游记】</li>
 </ol>
 
                 
@@ -579,6 +585,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -868,6 +880,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

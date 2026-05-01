@@ -359,7 +359,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><p>博客或许是需要一个个人简介的，不然大家读了半天故事，连故事的主人公都不知道是谁，那不闹大笑话了吗。</p>
+                <h1 id="个人简介">个人简介</h1>
+<p>博客或许是需要一个个人简介的，不然大家读了半天故事，连故事的主人公都不知道是谁，那不闹大笑话了吗。</p>
 <p>所以鼠鼠决定写点东西介绍一下自己。</p>
 <p>鼠鼠是一个来自于山东的小镇做题家，本科就读于鲁东大学计算机科学与技术专业21级，硕士就读于中国石油大学（华东）的软件工程专业25级，现在是硕士一年级的学生。</p>
 <p>鼠鼠是一个很内向的人，鼠鼠的 MBTI 是 INTJ，所以平时很少参加社交，但是欢迎大家来找鼠鼠聊天。</p>
@@ -568,6 +569,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -857,6 +864,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

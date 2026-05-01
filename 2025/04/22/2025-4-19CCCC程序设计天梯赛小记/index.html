@@ -361,20 +361,23 @@
             
               <div class="markdown-body">
                 
-                <h1 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h1><p>故事还要追溯到去年的天梯赛。</p>
+                <h1 id="写在前面：">写在前面：</h1>
+<p>故事还要追溯到去年的天梯赛。</p>
 <p>由于去年只差一点点分就团队国一，并且我校还没有拿过团队国一，因此今年三个刚考完研的老选手又双叒叕被叫来打天梯赛。</p>
-<h1 id="赛前："><a href="#赛前：" class="headerlink" title="赛前："></a>赛前：</h1><p>年后回到学校，面对的就是令人窒息的复试准备。艰难的通过复试之后，又发觉毕业设计所剩的时间已然不多，又开始赶毕业设计。只有晚上偶尔摸一摸cf，这就是唯一的训练了。</p>
+<h1 id="赛前：">赛前：</h1>
+<p>年后回到学校，面对的就是令人窒息的复试准备。艰难的通过复试之后，又发觉毕业设计所剩的时间已然不多，又开始赶毕业设计。只有晚上偶尔摸一摸cf，这就是唯一的训练了。</p>
 <p>时间来到天梯赛报名。其实我对冲刺团队国一心里没什么底，但是也没什么其他更好的办法了，只能硬着头皮上了。</p>
-<h1 id="赛时："><a href="#赛时：" class="headerlink" title="赛时："></a>赛时：</h1><p>比赛开始，又是经典的网络爆炸，这已经成天梯赛的特色了。</p>
+<h1 id="赛时：">赛时：</h1>
+<p>比赛开始，又是经典的网络爆炸，这已经成天梯赛的特色了。</p>
 <p>然后开始写题，完全不在状态，L1-6模拟写完直接红温，L2-1写都没写，L3-1差两分钟写完。最后打完只有179分。</p>
 <p>由于发挥的实在是太差了，我实在不想再去仔细回忆赛场上的细节。说再多都是给菜找借口。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>如同我赛前说的那样，我真成躺赢狗了。队伍里五个个人国二，剩下五个个人国三，总分直接飙到2100+，达到了团队国一的中游。</p>
+<h1 id="总结：">总结：</h1>
+<p>如同我赛前说的那样，我真成躺赢狗了。队伍里五个个人国二，剩下五个个人国三，总分直接飙到2100+，达到了团队国一的中游。</p>
 <p>总结下来就是，坐挂车真爽，被学弟狠狠带飞了。</p>
 <figure style="text-align: center;">
   <img src="page1.jpg" srcset="/img/loading.gif" lazyload width="300" alt="合照">
   <figcaption>合照</figcaption>
 </figure>
-
 <p>结束之后把人都叫来拍了张合照，还是蛮开心的。</p>
 
                 
@@ -578,6 +581,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -867,6 +876,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

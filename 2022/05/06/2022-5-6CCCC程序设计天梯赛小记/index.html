@@ -359,12 +359,17 @@
             
               <div class="markdown-body">
                 
-                <h1 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h1><p>本来不想写了，但是想想自己能打的比赛也没有多少，还是记录一下吧。</p>
-<h1 id="赛前："><a href="#赛前：" class="headerlink" title="赛前："></a>赛前：</h1><p>这次比赛的整体感受，就是比较有压力，跟学长学姐们在一个组里。<br>	<br>我在的机房只有我一个大一新生（我是菜鸡）。不能说是没有压力，只能说是压力巨大（害怕拖后腿）。比赛那天十点就到了我的座位，十一点半才能申请进入，下午一点开始比赛，中间漫长的等待时间真的是折磨无比，幸好我心态好，坐着发呆走神撑到了比赛前。</p>
-<h1 id="赛时："><a href="#赛时：" class="headerlink" title="赛时："></a>赛时：</h1><p>比赛的题有点难（以我个人的水平来说），但是遇到难题已经麻木了，反正就是做呗。</p>
+                <h1 id="写在前面：">写在前面：</h1>
+<p>本来不想写了，但是想想自己能打的比赛也没有多少，还是记录一下吧。</p>
+<h1 id="赛前：">赛前：</h1>
+<p>这次比赛的整体感受，就是比较有压力，跟学长学姐们在一个组里。</p>
+<p>我在的机房只有我一个大一新生（我是菜鸡）。不能说是没有压力，只能说是压力巨大（害怕拖后腿）。比赛那天十点就到了我的座位，十一点半才能申请进入，下午一点开始比赛，中间漫长的等待时间真的是折磨无比，幸好我心态好，坐着发呆走神撑到了比赛前。</p>
+<h1 id="赛时：">赛时：</h1>
+<p>比赛的题有点难（以我个人的水平来说），但是遇到难题已经麻木了，反正就是做呗。</p>
 <p>中间被L2的前两个题卡了好久，最后也没拿到多少分，L2第三个题看懂了不会做，这时候我把希望压在了L2最后一个题，时间只有不到半小时了。</p>
 <p>这道题是个最短路，当时感觉用尽了自己所有的精力去写那个题，一发就过了，好惊险。最后拿到了134分，还混到了团队三等奖。</p>
-<h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>总的来说，还是需要努力，继续加油。</p>
+<h1 id="总结：">总结：</h1>
+<p>总的来说，还是需要努力，继续加油。</p>
 
                 
               </div>
@@ -455,9 +460,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/30/%E8%80%83%E7%A0%94%E5%88%9D%E8%AF%95%E6%B8%B8%E8%AE%B0/" title="2024.12 - 考研初试 - 游记">
+                      <a href="/2024/06/02/2024-6-2%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%BD%AF%E4%BB%B6%E7%B1%BBC-B%E7%BB%84%E5%9B%BD%E8%B5%9B%E5%B0%8F%E8%AE%B0/" title="2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2024.12 - 考研初试 - 游记</span>
+                        <span class="hidden-mobile">2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -567,6 +572,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -856,6 +867,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
