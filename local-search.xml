@@ -33,7 +33,7 @@
     <link href="/2026/04/25/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/"/>
     <url>/2026/04/25/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/</url>
     
-    <content type="html"><![CDATA[<h1 id="个人简介">个人简介</h1><p>博客或许是需要一个个人简介的，不然大家读了半天故事，连故事的主人公都不知道是谁，那不闹大笑话了吗。</p><p>所以鼠鼠决定写点东西介绍一下自己。</p><p>鼠鼠的名字是李春阳，是一个来自于山东的小镇做题家，本科就读于鲁东大学计算机科学与技术专业21级，硕士就读于中国石油大学（华东）的软件工程专业25级，现在是硕士一年级的学生。</p><p>鼠鼠是一个很内向的人，鼠鼠的 MBTI 是 INTJ，所以平时很少参加社交，但是欢迎大家来找鼠鼠聊天。</p><p>鼠鼠的爱好有打LOL，鼠鼠的技术很菜，只能打打娱乐模式。鼠鼠的爱好还有写博客，鼠鼠虽然没什么人生阅历但是莫名其妙的很喜欢记录自己，很奇怪吧。鼠鼠的爱好还有打算法竞赛（网瘾该电电了），虽然水平非常低下，智商也非常低下，但是这是鼠鼠的小小的舒适区，也许偶尔写写算法题不至于让鼠鼠太早进入老年痴呆状态。</p><p>鼠鼠其实是不怎想写个人简介的，因为鼠鼠觉得写个人简介就像在给自己打标签，这样很无聊。但是鼠鼠思来想去还是决定写一个，方便让大家知道到底是谁在写博客。</p><p>如果大家觉得鼠鼠没活了，那鼠鼠在这里提前给大家拜年啦，祝大家新年快乐🥳🥳🥳。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="个人简介">个人简介</h1><p>博客或许是需要一个个人简介的，不然大家读了半天故事，连故事的主人公都不知道是谁，那不闹大笑话了吗。</p><p>所以鼠鼠决定写点东西介绍一下自己。</p><p>鼠鼠的名字是李春阳，性别男，是一个来自于山东的小镇做题家，本科就读于鲁东大学计算机科学与技术专业21级，硕士就读于中国石油大学（华东）的软件工程专业25级，现在是硕士一年级的学生。</p><p>鼠鼠是一个很内向的人，鼠鼠的 MBTI 是 INTJ，所以平时很少参加社交，但是欢迎大家来找鼠鼠聊天。</p><p>鼠鼠的爱好有打LOL，鼠鼠的技术很菜，只能打打娱乐模式。鼠鼠的爱好还有写博客，鼠鼠虽然没什么人生阅历但是莫名其妙的很喜欢记录自己，很奇怪吧。鼠鼠的爱好还有打算法竞赛（网瘾该电电了），虽然水平非常低下，智商也非常低下，但是这是鼠鼠的小小的舒适区，也许偶尔写写算法题不至于让鼠鼠太早进入老年痴呆状态。</p><p>鼠鼠其实是不怎想写个人简介的，因为鼠鼠觉得写个人简介就像在给自己打标签，这样很无聊。但是鼠鼠思来想去还是决定写一个，方便让大家知道到底是谁在写博客。</p><p>如果大家觉得鼠鼠没活了，那鼠鼠在这里提前给大家拜年啦，祝大家新年快乐🥳🥳🥳。</p>]]></content>
     
     
     <categories>
@@ -173,6 +173,31 @@
     <tags>
       
       <tag>蓝桥杯</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2024.4.20 - CCCC团队程序设计天梯赛（华山论剑组） - 游记</title>
+    <link href="/2024/04/20/2024-4-20CCCC%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%B0%8F%E8%AE%B0/"/>
+    <url>/2024/04/20/2024-4-20CCCC%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B%E5%B0%8F%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="赛前">赛前</h1><p>早上来了实验室之后状况频出，一会某人的编译器不能用了，一会某人登陆不上去了，和志愿者一直在解决各种问题。</p><p>回到自己位置上发现自己登录掉线了，当时距离比赛就剩15分钟了，掉线的人还不少。当时就有一种不详的预感。</p><p>正式比赛还好，我只掉了一次，但是队友平均掉线次数都在三到四次左右，很影响大家的心态和进度，掉线了可是需要把全部的登录流程都重新走一遍。</p><p>不知道为什么这个问题在测试赛没有出现，正式赛状况频发。</p><p>前两年出现的情况比今年的情况更变态，所以我的心态还是，很稳定！</p><p>非常感谢我们的志愿者们和负责和我们学校对接的老师，非常尽心尽责地给我们解决各种问题，一直在帮助选手们断线重连。</p><h1 id="赛时">赛时</h1><p>今年的题目比较变态的有两个字符串题，我正好是队里学字符串的。</p><p>虽然扣了一点分，但是在这两个题上丝毫没浪费时间，这也为后面 L3-1 打好了时间上的基础。</p><p>打完 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>3</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">L3-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mord mathrm">3</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span> 就剩了十分钟左右，也没有什么想看 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>3</mn><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">L3-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mord mathrm">3</span><span class="mbin">−</span><span class="mord mathrm">2</span></span></span></span> 的欲望，打算把前面失去的小分补一补，但是很可惜一点也没补回来。</p><p>就这样结束了。</p><h1 id="赛后">赛后</h1><p>总的来说这套题比去年简单不少，去年只有四个个人国三，今年有三个个人国二，八个个人国三。</p><p>再者，我认为天梯赛还是考心态多一点，心态稳定住，一切都会好起来的。</p><p>还是没有团队国一。</p><p>本来以为今年的阵容已经足够强了，但是还是差35分，这个任务就交给学弟学妹们去完成了。</p><p>加油！！！！</p><p>在天梯赛开始之前，我精准地预测到今年会考字符串恶心题和最短路题，并让实验室同学复习字符串函数和最短路算法，但是大家两个字符串题做的还是很烂，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mn>3</mn><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">L3-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="base textstyle uncramped"><span class="mord mathit">L</span><span class="mord mathrm">3</span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span> 最短路满分的算上我也就三个人，可惜。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>游记有感</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>天梯赛</tag>
       
     </tags>
     
