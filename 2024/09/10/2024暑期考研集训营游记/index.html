@@ -19,26 +19,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2024蓝桥杯国赛游记">
+    <meta name="description" content="2024海文暑期考研集训营游记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024.6.1 - 蓝桥杯国赛（软件类C&#x2F;C++B组） - 游记">
-<meta property="og:url" content="http://example.com/2024/06/02/2024%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%BD%E8%B5%9B/index.html">
+<meta property="og:title" content="2024.7 - 海文暑期考研集训营 - 游记">
+<meta property="og:url" content="http://example.com/2024/09/10/2024%E6%9A%91%E6%9C%9F%E8%80%83%E7%A0%94%E9%9B%86%E8%AE%AD%E8%90%A5%E6%B8%B8%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Qiwen">
-<meta property="og:description" content="2024蓝桥杯国赛游记">
+<meta property="og:description" content="2024海文暑期考研集训营游记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/page1.jpg">
-<meta property="article:published_time" content="2024-06-02T02:48:54.000Z">
-<meta property="article:modified_time" content="2026-05-07T07:57:33.996Z">
+<meta property="article:published_time" content="2024-09-10T12:33:56.000Z">
+<meta property="article:modified_time" content="2026-05-10T06:58:11.169Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="蓝桥杯">
+<meta property="article:tag" content="考研">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/page1.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记 - Qiwen</title>
+  <title>2024.7 - 海文暑期考研集训营 - 游记 - Qiwen</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -285,7 +283,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记"></span>
+            <span id="subtitle" data-typed-text="2024.7 - 海文暑期考研集训营 - 游记"></span>
           
         </div>
 
@@ -296,8 +294,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-02 10:48" pubdate>
-          2024年6月2日 上午
+        <time datetime="2024-09-10 20:33" pubdate>
+          2024年9月10日 晚上
         </time>
       </span>
     
@@ -308,7 +306,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.5k 字
         
       </span>
     
@@ -319,7 +317,7 @@
         
         
         
-          9 分钟
+          13 分钟
         
       </span>
     
@@ -367,43 +365,37 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记</h1>
+            <h1 id="seo-header">2024.7 - 海文暑期考研集训营 - 游记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="赛前">赛前</h1>
-<p>赛前一点都没有训，甚至电脑都没有摸一下。</p>
-<p>由于是在山东科技大学比赛，所以我们包了大巴早上五点出发。大约需要四点起床。我前一晚上十点就躺在床上，但是失眠了，躺在床上辗转反侧。一点才睡着，然后四点就起来了，感觉状态巨差。到了集合点之后发现大家休息得普遍不是很好。</p>
-<p>在大巴上枕着书包睡了一会，感觉好了一点，但是有一点小晕车。在车上发了两块士力架，我没吃，放在口袋里了，等拿出来了的时候已经化的不成样子了。还发了一点樱桃和矿泉水，樱桃好吃！吃了一点自己带的面包。</p>
-<p>在一路颠簸下终于到了山科。状态很奇怪，有一点晕车debuff，有巨大的疲倦debuff，还有一点饥饿debuff。但是下车之后距离开考还剩二十分钟，没什么办法就进场候考了。</p>
-<h1 id="赛时">赛时</h1>
-<p>A：枚举 400</p>
-<p>B：可以直接暴力枚举，也可以观察一下，求出b，c之间的关系再枚举，55,94,56</p>
-<p>C：将每条线上出现的整数点扔进map，统计出现次数，时间复杂度$O(nlogn)$，n = 5e6</p>
-<p>D：二分答案</p>
-<p>E：排序+双指针</p>
-<p>F：不会动态规划，不会动态规划，不会动态规划，写了一个假贪心</p>
-<p>G：写了一个$O(n^{2}logn)$的组合数，感觉很蠢，不太会优化</p>
-<p>H：糊了一下，感觉最多的情况时一定有一个手镯出现在矩形的角落上。于是我的做法是枚举四个角，枚举矩形形态，然后枚举哪一个矩形放在这个角上，这样就能算出具体的矩形范围，再枚举剩余的手镯谁能放进来，$O(8n^2)$，出来和群友讨论的时候发现也有其他人这么写，感觉还是挺对。</p>
-<p>I：扔了$O(2^nlogn)$的暴力上去</p>
-<p>J：扔了$O(n^3)$的暴力上去</p>
-<p>整一场最可惜的是不会那个简单DP，然后每个题基本上都挂了不少分，赛后讨论感觉大家做的都很不错，先保守估一个国优。</p>
-<p>一点小乐子：我的开题顺序很怪，先顺开了AB，然后看C，看了五分钟觉得不好写，去看D。刚读完题面，出了D的勘误，很费事，然后直接换了E，写完了E，回去写了D。</p>
-<p>然后是F-&gt;C-&gt;H这时候就剩半小时了。刚好写了I和J的暴力，结束了之后感觉累虚脱了。</p>
-<h1 id="赛后">赛后</h1>
-<p>赛后大家买了两个冰淇凌吃，拍了合照，然后大家一起坐大巴回去了。</p>
-<p>队友去打了A组，简单问了问，评价是很难，幸好我今年做了怯战蜥蜴，润了B组，跑了跑了。</p>
-<p>打完蓝桥杯算是正式退役了，退役小作文正在写，但是六月中旬有一场期末，有六级，还有考研的任务，所以不知道什么时候能写完。</p>
-<figure style="text-align: center;">
-  <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/page1.jpg" srcset="/img/loading.gif" lazyload width="300" alt="合照">
-  <figcaption>合照</figcaption>
-</figure>
-<h1 id="出分">出分</h1>
-<p>成绩出了，我CB国一。</p>
-<p>cxy也是CB国一。</p>
-<p>xb有点可惜，CA国三，差几名CA国二。</p>
-<p>安心考研，没有耻辱退役，拜拜了。</p>
+                <h1 id="摘要：">摘要：</h1>
+<p>Qiwen在暑假的时候参加了所在辅导班的为期一个月的考研封闭集训营，有了一些全新的感悟，略作记录。</p>
+<h1 id="对各大辅导机构考研封闭集训营的一些个人看法：">对各大辅导机构考研封闭集训营的一些个人看法：</h1>
+<p>各种考研封闭集训营大同小异。</p>
+<p>优点肯定是学习氛围浓厚，所有的服务设施和教育设施都围绕学习这一终极目的。</p>
+<p>缺点也非常的明显，由于每个人的学习进度和学习效率的不同，大班课肯定无法满足每个人的学习需要。对于不适应大班课的人来说，这简直就是一场灾难。而且我认为课程安排也是非常不合理，一个月要完成对于三大科目的强化，这本来就不现实。仁者见仁智者见智。</p>
+<h1 id="对于考研原因一些感想：">对于考研原因一些感想：</h1>
+<p>考研原因其实是一个非常重要的问题，也即为什么考研的问题。</p>
+<p>在刚开始做抉择的时候，我咨询了很多人的意见，有的人告诉我“经济下行，考研是流行趋势，考研后工资更高，工作更好”；有的人告诉我“卷学历没什么必要，学历门槛只会越来越高，不如去实习找工作多学习技术”；还有人告诉我“读研只不过是给导师做杂活，当牛做马，什么也学不到的”；</p>
+<p>我反复权衡了许久，最后在工作和考研之间选择了考研。但我一直没有明确自己考研的原因。或者说原因很模糊，或许是想考一个更好的学校证明自己，或许是想追求更高工资的可能，或许是想要逃避这个经济低迷的周期，等待一个新的风口。但是这些在我的心中都很模糊，无法成为真正决定性的原因。我一直在随波逐流。</p>
+<p>经历了集训营的洗礼和最近的一些学习思考，我渐渐找到了这个问题的答案。</p>
+<p>在集训营里，我有了三个全新的室友。他们来自完全不同的专业，他们有着与我不同的价值观与思维方式。我与他们交流了许多关于人生目标，经济形势，以及对于未来看法的话题。我在思维的碰撞中得到了全新的启示。</p>
+<p>在最近的学习中，我又学习了徐涛老师的考研政治，汲取了一些他的人生经验。这促使我又开始重新思考我选择考研的原因，现在我对于自己考研的原因有了全新的认知。</p>
+<p>首先就是：我希望通过研究生的学习提升自己的认知能力。</p>
+<p>在2023年雷军的年度演讲中讲了一个关于小米手机影像发展的故事。其中“同一个创意，同一个产品，当你改变认知以后，决策就完全不同。”这句话对我影响颇多。</p>
+<p>人生正是由一个个岔路口组成，每天都有太多的决策等待着我们去完成。所以当拥有更高的认知，更全面的认知之后对未来的影响是巨大的。</p>
+<p>回顾我的大学四年，我的认知能力迅速提升。这四年我的成长，我想是比前十八年加起来还要多的。回想之前做过的一些傻事，只不过是低认知力的体现而已。</p>
+<p>而想要提升自己的认知能力，无非就是多学习多读书，提升自己所处的阶级和圈子。所以站在这个角度下来看，读研的重要性不言而喻。</p>
+<p>第二点就是：我希望找到自己感兴趣的方向去做。</p>
+<p>回顾我大学四年取得的成绩，这都是基于我对自己选择的热爱，对其的沉迷。我为其真正的流过泪，付出过自己大学的多数时光。这让我加深了对于“热爱可抵岁月漫长”的理解。只有我自己真正喜欢的东西我才会付出精力去学习，去挖掘自己的潜力，去做的很好。而我不感兴趣的东西做的也都平平无奇。</p>
+<p>在结束了自己竞赛生涯之后，我有很长一段时间的迷茫期，我不知道自己喜欢什么，我被动的去投入考研学习之中。做一个不喜欢的东西是不会有自驱力的，所以这加强了我去寻找自己喜欢方向的决心，我不希望也不允许自己未来在一个自己不感兴趣的岗位上浑浑噩噩，为了生计而奔波。</p>
+<p>而研究生是一个很大的平台，我希望能去一个更大的平台探索自己的兴趣。</p>
+<p>一辈子做自己喜欢的事我想是一件很难的事情，大多数人一辈子都只是为了生计而奔波而已。但是我还年轻，我想我还有一些试错的机会，我想去尝试一次，经历了才不会有遗憾。</p>
+<h1 id="结语">结语</h1>
+<p>其实还有很多东西想写，但是总觉得自己感悟的还不够，我需要更长的时间沉淀一下。</p>
+<p>雷军先生在2023年的年度演讲对我影响颇多，每读一遍我都会产生全新的感悟与理解。推荐大家也去读一下。</p>
 
                 
               </div>
@@ -437,7 +429,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="print-no-link">#蓝桥杯</a>
+        <a href="/tags/%E8%80%83%E7%A0%94/" class="print-no-link">#考研</a>
       
     </div>
   
@@ -449,8 +441,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记</div>
-      <div>http://example.com/2024/06/02/2024蓝桥杯国赛/</div>
+      <div>2024.7 - 海文暑期考研集训营 - 游记</div>
+      <div>http://example.com/2024/09/10/2024暑期考研集训营游记/</div>
     </div>
     <div class="license-meta">
       
@@ -462,7 +454,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年6月2日</div>
+          <div>2024年9月10日</div>
         </div>
       
       
@@ -494,9 +486,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/09/10/2024%E6%9A%91%E6%9C%9F%E8%80%83%E7%A0%94%E9%9B%86%E8%AE%AD%E8%90%A5%E6%B8%B8%E8%AE%B0/" title="2024.7 - 海文暑期考研集训营 - 游记">
+                      <a href="/2024/12/30/%E8%80%83%E7%A0%94%E5%88%9D%E8%AF%95%E6%B8%B8%E8%AE%B0/" title="2024.12 - 考研初试 - 游记">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2024.7 - 海文暑期考研集训营 - 游记</span>
+                        <span class="hidden-mobile">2024.12 - 考研初试 - 游记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -504,8 +496,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/20/2024%E5%A4%A9%E6%A2%AF%E8%B5%9B/" title="2024.4.20 - CCCC团队程序设计天梯赛（华山论剑组） - 游记">
-                        <span class="hidden-mobile">2024.4.20 - CCCC团队程序设计天梯赛（华山论剑组） - 游记</span>
+                      <a href="/2024/06/02/2024%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%9B%BD%E8%B5%9B/" title="2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记">
+                        <span class="hidden-mobile">2024.6.1 - 蓝桥杯国赛（软件类C/C++B组） - 游记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
