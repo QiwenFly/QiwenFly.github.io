@@ -52,12 +52,27 @@
    二、 表格样式优化
 ========================================= */
 
-/* 表格居中显示 */
+/* 表格居中显示 - 终极版 */
 .markdown-body table,
+.article-content table,
 .article-body table,
+.markdown table,
+div.table-container table,
+table.markdown-table,
 table {
   margin-left: auto !important;
   margin-right: auto !important;
+  float: none !important;
+  display: table !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.markdown-body table th,
+.markdown-body table td,
+table th,
+table td {
+  text-align: center !important;
 }
 
 /* 6. 隐藏的弹出二维码名片 */
