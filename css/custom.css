@@ -48,6 +48,18 @@
   color: #1abc9c !important; 
 }
 
+/* =========================================
+   二、 表格样式优化
+========================================= */
+
+/* 表格居中显示 */
+.markdown-body table,
+.article-body table,
+table {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* 6. 隐藏的弹出二维码名片 */
 .my-floating-social .social-card {
   display: none;
@@ -96,24 +108,6 @@
 /* 9. 夜间模式适配，让竖杠变暗一点 */
 [data-user-color-scheme="dark"] .my-floating-social .social-divider {
   background-color: #666;
-}
-
-/* =========================================
-   二、 表格样式改造 - 撑满全屏
-========================================= */
-.markdown-body table,
-.markdown-body table tbody,
-.markdown-body table tr,
-.markdown-body table th,
-.markdown-body table td {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-.markdown-body table th,
-.markdown-body table td {
-  text-align: center;
-  padding: 12px 8px;
 }
 
 
