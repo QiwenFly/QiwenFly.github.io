@@ -98,6 +98,24 @@
   background-color: #666;
 }
 
+/* =========================================
+   二、 表格样式改造 - 撑满全屏
+========================================= */
+.markdown-body table,
+.markdown-body table tbody,
+.markdown-body table tr,
+.markdown-body table th,
+.markdown-body table td {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  text-align: center;
+  padding: 12px 8px;
+}
+
 
 /* =========================================
    二、 首页文章列表“独立卡片化”究极进化版
