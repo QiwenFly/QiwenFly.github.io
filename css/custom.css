@@ -72,7 +72,7 @@ table {
 .markdown-body table td,
 table th,
 table td {
-  text-align: center !important;
+  text-align: left !important;
 }
 
 /* 6. 隐藏的弹出二维码名片 */
