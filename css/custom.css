@@ -200,3 +200,187 @@ table td {
 [data-user-color-scheme="dark"] .tagcloud a:hover {
   color: #1abc9c !important;
 }
+
+
+/* =========================================
+   四、 “专题”分类与标签聚合页
+========================================= */
+
+.topics-tabs {
+  gap: 18px;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.topics-tabs .nav-link {
+  min-width: 160px;
+  padding: 0.8rem 1.8rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  color: #3c4858;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.topics-tabs .nav-link:hover,
+.topics-tabs .nav-link.active {
+  border-color: #1abc9c;
+  background-color: #1abc9c;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(26, 188, 156, 0.28);
+  transform: translateY(-2px);
+}
+
+.topics-tabs .iconfont {
+  margin-right: 6px;
+}
+
+.topics-content {
+  min-height: 240px;
+}
+
+.topics-tagcloud {
+  padding: 1.5rem 0;
+  line-height: 2.4;
+}
+
+.topics-tagcloud a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+[data-user-color-scheme="dark"] .topics-tabs .nav-link {
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #c4c6c9;
+}
+
+[data-user-color-scheme="dark"] .topics-tabs .nav-link:hover,
+[data-user-color-scheme="dark"] .topics-tabs .nav-link.active {
+  border-color: #1abc9c;
+  color: #fff !important;
+}
+
+@media (max-width: 575.98px) {
+  .topics-tabs {
+    gap: 10px;
+  }
+
+  .topics-tabs .nav-link {
+    min-width: 130px;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+
+/* =========================================
+   五、 分类与标签详情页快速切换
+========================================= */
+
+.topics-switcher {
+  margin-bottom: 1.75rem;
+  padding: 0 0 1.5rem;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  background: transparent;
+}
+
+.topics-switcher-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.topics-switcher-header strong {
+  font-size: 1rem;
+  color: var(--sec-text-color);
+}
+
+.topics-switcher-header a {
+  font-size: 0.9rem;
+}
+
+.topics-switcher-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topics-switcher-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.45rem 0.85rem;
+  border: 0;
+  border-radius: 999px;
+  color: #3c4858 !important;
+  background: rgba(0, 0, 0, 0.055);
+  line-height: 1.2;
+  transition: all 0.2s ease;
+}
+
+.topics-switcher-item small {
+  min-width: 1.45em;
+  padding: 0.1em 0.4em;
+  border-radius: 999px;
+  color: #718096;
+  background: rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.topics-switcher-item:hover,
+.topics-switcher-item.active {
+  color: #fff !important;
+  background: #1abc9c;
+  box-shadow: 0 4px 12px rgba(26, 188, 156, 0.22);
+  transform: translateY(-1px);
+}
+
+.topics-switcher-item:hover small,
+.topics-switcher-item.active small {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-user-color-scheme="dark"] .topics-switcher {
+  border-color: rgba(255, 255, 255, 0.09);
+  background: transparent;
+}
+
+[data-user-color-scheme="dark"] .topics-switcher-item {
+  color: #c4c6c9 !important;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+[data-user-color-scheme="dark"] .topics-switcher-item:hover,
+[data-user-color-scheme="dark"] .topics-switcher-item.active {
+  color: #fff !important;
+  background: #1abc9c;
+}
+
+.topics-detail {
+  transition: opacity 0.18s ease;
+}
+
+.topics-detail.is-loading {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+@media (max-width: 575.98px) {
+  .topics-switcher {
+    padding-bottom: 1.25rem;
+  }
+
+  .topics-switcher-list {
+    gap: 8px;
+  }
+
+  .topics-switcher-item {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.92rem;
+  }
+}
