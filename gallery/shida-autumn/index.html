@@ -21,13 +21,13 @@
   
     <meta name="description" content="Welcome to Qiwen‘s Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://example.com/gallery/index.html">
+<meta property="og:title" content="石大的秋">
+<meta property="og:url" content="http://example.com/gallery/shida-autumn/index.html">
 <meta property="og:site_name" content="Qiwen">
 <meta property="og:description" content="Welcome to Qiwen‘s Blog">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-08-23T04:00:00.000Z">
-<meta property="article:modified_time" content="2026-08-23T06:00:41.663Z">
+<meta property="article:published_time" content="2026-09-02T13:32:05.187Z">
+<meta property="article:modified_time" content="2026-09-02T13:32:05.187Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>相册 - Qiwen</title>
+  <title>石大的秋 - Qiwen</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -270,13 +270,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/20260902213045303.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.55)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="撷取光影，珍藏寻常"></span>
+            <span id="subtitle" data-typed-text="相册"></span>
           
         </div>
 
@@ -305,55 +305,49 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<section class="gallery-page" aria-label="相册列表">
-  <header class="gallery-intro">
+<article class="gallery-detail">
+  <a class="gallery-back" href="/gallery/">
+    <i class="iconfont icon-arrowleft"></i>全部相册
+  </a>
+
+  <header class="gallery-detail-header">
     <div>
       <span class="gallery-eyebrow">SNAPSHOTS</span>
-      <h2>随拍相册</h2>
+      <h2>石大的秋</h2>
+      <p>记录石大校园的秋日光影。</p>
     </div>
-    <p>记录生活的点滴。</p>
+    <div class="gallery-detail-meta">
+      <span>秋日随拍</span>
+      <span>1 张照片</span>
+    </div>
   </header>
 
-  <div class="gallery-album-grid">
+  <div class="gallery-photo-wall">
     
-      <a class="gallery-album-card" href="/gallery/shida-summer/">
-        <figure class="gallery-album-cover">
-          
-            <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E4%BA%91%E8%B5%B7%E5%A4%8F%E7%AB%A0.jpg" srcset="/img/loading.gif" lazyload alt="石大的夏" loading="lazy">
-          
-          <span class="gallery-album-count">
-            <i class="iconfont icon-image-fill"></i>2
-          </span>
-        </figure>
-        <div class="gallery-album-info">
-          <div class="gallery-album-heading">
-            <h3>石大的夏</h3>
-            <span>夏日随拍</span>
-          </div>
-          <p>记录石大校园的夏日光影。</p>
-        </div>
-      </a>
-    
-      <a class="gallery-album-card" href="/gallery/shida-autumn/">
-        <figure class="gallery-album-cover">
-          
-            <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/20260902213045303.jpg" srcset="/img/loading.gif" lazyload alt="石大的秋" loading="lazy">
-          
-          <span class="gallery-album-count">
-            <i class="iconfont icon-image-fill"></i>1
-          </span>
-        </figure>
-        <div class="gallery-album-info">
-          <div class="gallery-album-heading">
-            <h3>石大的秋</h3>
-            <span>秋日随拍</span>
-          </div>
-          <p>记录石大校园的秋日光影。</p>
-        </div>
-      </a>
+      <button class="gallery-photo" type="button" data-index="0" aria-label="查看照片：霞卷长空">
+        <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/20260902213045303.jpg" srcset="/img/loading.gif" lazyload alt="霞卷长空" loading="lazy">
+        <span>霞卷长空</span>
+      </button>
     
   </div>
-</section>
+
+  
+</article>
+
+<div class="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="照片预览">
+  <button class="gallery-lightbox-close" type="button" aria-label="关闭">×</button>
+  <button class="gallery-lightbox-prev" type="button" aria-label="上一张">‹</button>
+  <figure>
+    <img src="" srcset="/img/loading.gif" lazyload alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button class="gallery-lightbox-next" type="button" aria-label="下一张">›</button>
+</div>
+
+<script>
+  window.GALLERY_PHOTOS = [{"url":"https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/20260902213045303.jpg","caption":"霞卷长空"}];
+</script>
+<script src="/js/gallery.js" defer></script>
 
               </div>
             </div>
