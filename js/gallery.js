@@ -7,14 +7,22 @@
   if (!wall || !lightbox || !photos.length) return;
 
   var image = lightbox.querySelector('img');
-  var caption = lightbox.querySelector('figcaption');
+  var title = lightbox.querySelector('.gallery-lightbox-title');
+  var counter = lightbox.querySelector('.gallery-lightbox-counter');
+  var factFields = lightbox.querySelectorAll('[data-gallery-fact]');
   var current = 0;
 
   function show(index) {
     current = (index + photos.length) % photos.length;
     image.src = photos[current].url;
     image.alt = photos[current].caption || '相册照片';
-    caption.textContent = (photos[current].caption || '') + '  ' + (current + 1) + ' / ' + photos.length;
+    title.textContent = photos[current].caption || '相册照片';
+    counter.textContent = (current + 1) + ' / ' + photos.length;
+    factFields.forEach(function(field) {
+      var value = photos[current][field.dataset.galleryFact] || '';
+      field.textContent = value;
+      field.parentElement.hidden = !value;
+    });
   }
 
   function open(index) {

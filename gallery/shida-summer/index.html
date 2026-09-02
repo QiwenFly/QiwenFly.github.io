@@ -326,12 +326,26 @@
     
       <button class="gallery-photo" type="button" data-index="0" aria-label="查看照片：云起夏章">
         <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E4%BA%91%E8%B5%B7%E5%A4%8F%E7%AB%A0.jpg" srcset="/img/loading.gif" lazyload alt="云起夏章" loading="lazy">
-        <span>云起夏章</span>
+        <div class="gallery-photo-info">
+          <strong class="gallery-photo-title">云起夏章</strong>
+          <div class="gallery-photo-facts">
+            <span><em>拍摄</em>2026-08-22 15:26:22</span>
+            <span><em>像素</em>8160 × 6144</span>
+            <span><em>设备</em>OPPO A2 5G</span>
+          </div>
+        </div>
       </button>
     
       <button class="gallery-photo" type="button" data-index="1" aria-label="查看照片：晴途漫行">
         <img src="https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E6%99%B4%E9%80%94%E6%BC%AB%E8%A1%8C.jpg" srcset="/img/loading.gif" lazyload alt="晴途漫行" loading="lazy">
-        <span>晴途漫行</span>
+        <div class="gallery-photo-info">
+          <strong class="gallery-photo-title">晴途漫行</strong>
+          <div class="gallery-photo-facts">
+            <span><em>拍摄</em>2026-08-22 15:11:26</span>
+            <span><em>像素</em>4080 × 3072</span>
+            <span><em>设备</em>OPPO A2 5G</span>
+          </div>
+        </div>
       </button>
     
   </div>
@@ -344,13 +358,23 @@
   <button class="gallery-lightbox-prev" type="button" aria-label="上一张">‹</button>
   <figure>
     <img src="" srcset="/img/loading.gif" lazyload alt="">
-    <figcaption></figcaption>
+    <figcaption>
+      <div class="gallery-lightbox-heading">
+        <strong class="gallery-lightbox-title"></strong>
+        <span class="gallery-lightbox-counter"></span>
+      </div>
+      <div class="gallery-lightbox-facts">
+        <span><em>拍摄时间</em><b data-gallery-fact="taken_at"></b></span>
+        <span><em>像素</em><b data-gallery-fact="dimensions"></b></span>
+        <span><em>设备</em><b data-gallery-fact="device"></b></span>
+      </div>
+    </figcaption>
   </figure>
   <button class="gallery-lightbox-next" type="button" aria-label="下一张">›</button>
 </div>
 
 <script>
-  window.GALLERY_PHOTOS = [{"url":"https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E4%BA%91%E8%B5%B7%E5%A4%8F%E7%AB%A0.jpg","caption":"云起夏章"},{"url":"https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E6%99%B4%E9%80%94%E6%BC%AB%E8%A1%8C.jpg","caption":"晴途漫行"}];
+  window.GALLERY_PHOTOS = [{"url":"https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E4%BA%91%E8%B5%B7%E5%A4%8F%E7%AB%A0.jpg","caption":"云起夏章","taken_at":"2026-08-22 15:26:22","dimensions":"8160 × 6144","device":"OPPO A2 5G"},{"url":"https://blog-images-1429245812.cos.ap-beijing.myqcloud.com/%E6%99%B4%E9%80%94%E6%BC%AB%E8%A1%8C.jpg","caption":"晴途漫行","taken_at":"2026-08-22 15:11:26","dimensions":"4080 × 3072","device":"OPPO A2 5G"}];
 </script>
 <script src="/js/gallery.js" defer></script>
 
