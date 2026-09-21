@@ -12,6 +12,8 @@
   const buttons = [...dialog.querySelectorAll('[data-view]')];
   const flipButton = dialog.querySelector('.collection-model-flip');
   let trigger, current = 'card', reverse = false, zoomGoal = null, lastWheel = 0;
+  let expectedSource = '', loadedSource = '';
+  const absoluteUrl = url => new URL(url, location.href).href;
   const views = {
     card: ['0deg 90deg 0.39m', '0m 0.010m 0m'],
     whole: ['-8deg 86deg 1.35m', '0m 0.19m 0m']
@@ -31,10 +33,10 @@
     document.body.classList.remove('collection-viewer-open');
     if (trigger) trigger.focus();
   }
-  wall.addEventListener('click', e => {
-    const button = e.target.closest('[data-collection-index]'); if (!button) return;
-    const item = items[Number(button.dataset.collectionIndex)]; if (!item) return;
-    trigger = button;
+  function showItem(index) {
+    const item = items[index]; if (!item) return;
+    current = 'card'; reverse = false;
+    trigger = wall.querySelector(`[data-collection-index="${index}"]`);
     dialog.querySelector('.collection-info-title').textContent = item.title;
     dialog.querySelector('.collection-info-date').textContent = item.display_date || '';
     dialog.querySelector('.collection-info-description').textContent = item.description || '';
@@ -42,17 +44,28 @@
     (item.facts || []).forEach(f => {const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');dt.textContent = f.label;dd.textContent = f.value;row.append(dt, dd);facts.append(row);});
     const blog = dialog.querySelector('.collection-blog-link');blog.hidden = !(item.blog && item.blog.url);
     if (!blog.hidden) {blog.href = item.blog.url;blog.querySelector('strong').textContent = item.blog.title;}
+    else {blog.removeAttribute('href');blog.querySelector('strong').textContent = '';}
+    dialog.querySelector('.collection-info').scrollTop = 0;
     dialog.classList.add('is-open'); dialog.setAttribute('aria-hidden', 'false');document.body.classList.add('collection-viewer-open');
     model.hidden = false; model.alt = item.title + '，可拖动旋转';
-    const src = item.model + '?v=back16';
-    const sameSource = model.src && new URL(model.src, location.href).href === new URL(src, location.href).href;
-    status.hidden = Boolean(sameSource && model.loaded);
+    const src = item.model + '?v=' + encodeURIComponent(item.model_version || 'back16');
+    expectedSource = absoluteUrl(src);
+    const sameSource = model.src && absoluteUrl(model.src) === expectedSource;
+    status.hidden = Boolean(sameSource && loadedSource === expectedSource && model.loaded);
     status.textContent = '正在载入藏品…';
-    if (!sameSource) model.src = src;
-    reverse = false; flipButton.setAttribute('aria-label', '翻到背面');
-    view('card', true); close.focus();
+    if (!sameSource) {loadedSource = ''; model.style.visibility = 'hidden'; model.src = src;}
+    flipButton.setAttribute('aria-label', reverse ? '翻到正面' : '翻到背面');
+    view(current, true);
+  }
+  wall.addEventListener('click', e => {
+    const button = e.target.closest('[data-collection-index]'); if (!button) return;
+    showItem(Number(button.dataset.collectionIndex)); close.focus();
   });
-  model.addEventListener('load', () => {status.hidden = true; view(current, true);});
+  model.addEventListener('load', event => {
+    if (!event.detail?.url || absoluteUrl(event.detail.url) !== expectedSource) return;
+    loadedSource = expectedSource;
+    status.hidden = true; model.style.visibility = ''; view(current, true);
+  });
   model.addEventListener('error', () => {status.hidden = false;status.textContent = '模型未能载入，请刷新重试。';});
   buttons.forEach(b => b.addEventListener('click', () => view(b.dataset.view)));
   flipButton.addEventListener('click', () => {
