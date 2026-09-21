@@ -44,7 +44,7 @@
     if (!blog.hidden) {blog.href = item.blog.url;blog.querySelector('strong').textContent = item.blog.title;}
     dialog.classList.add('is-open'); dialog.setAttribute('aria-hidden', 'false');document.body.classList.add('collection-viewer-open');
     model.hidden = false; model.alt = item.title + '，可拖动旋转';
-    const src = item.model + '?v=back15';
+    const src = item.model + '?v=back16';
     const sameSource = model.src && new URL(model.src, location.href).href === new URL(src, location.href).href;
     status.hidden = Boolean(sameSource && model.loaded);
     status.textContent = '正在载入藏品…';
