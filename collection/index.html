@@ -332,6 +332,7 @@
                 
 <link rel="stylesheet" href="/css/collection-base.css?v=release19">
 <link rel="stylesheet" href="/css/collection-foil.css?v=release19">
+<link rel="stylesheet" href="/css/collection-detail.css?v=release20">
 <section class="collection-page" aria-label="收藏墙">
   <header class="collection-intro">
     <div>
@@ -381,9 +382,11 @@
 
 <div class="collection-viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="藏品详情">
   <button class="collection-viewer-close" type="button" aria-label="关闭">&times;</button>
-  <div class="collection-viewer-shell">
+  <div class="collection-viewer-shell" data-tier="bronze">
     <section class="collection-model-panel" aria-label="可旋转藏品模型">
       <div class="collection-model-stage">
+        <div class="collection-detail-decoration collection-detail-stage-frame" aria-hidden="true"></div>
+        <div class="collection-detail-decoration collection-detail-stage-laurel" aria-hidden="true"></div>
         <div class="collection-stage-label"><span>藏品档案</span></div>
         <model-viewer class="collection-model-viewer" hidden
                       camera-controls touch-action="pan-y" zoom-sensitivity="0.25"
@@ -407,7 +410,13 @@
     </section>
 
     <aside class="collection-info">
-      <span class="collection-info-date"></span>
+      <div class="collection-info-inner">
+      <div class="collection-detail-decoration collection-detail-info-frame" aria-hidden="true"></div>
+      <div class="collection-info-content">
+      <div class="collection-info-heading">
+        <span class="collection-info-date"></span>
+        <span class="collection-detail-tier">BRONZE</span>
+      </div>
       <h2 class="collection-info-title"></h2>
       <p class="collection-info-description"></p>
       <dl class="collection-info-facts"></dl>
@@ -418,6 +427,9 @@
         </span>
         <i aria-hidden="true">→</i>
       </a>
+      </div>
+      <div class="collection-detail-info-laurel" aria-hidden="true"></div>
+      </div>
     </aside>
   </div>
 </div>
@@ -426,7 +438,8 @@
   window.COLLECTION_ITEMS = [{"id":"deepwater-forum-delegate-2026","tier":"bronze","title":"2026 深水油气会议参会代表证","display_date":"2026.08","description":"哦！\n这是一个尝试，\n这是一个美好的开始。","image":"/images/collection/deepwater-forum-delegate-2026-fine13.png","model":"/models/collection/deepwater-forum-delegate-2026/deepwater-forum-delegate-2026.glb","facts":[{"label":"活动","value":"第七届国际深水深层油气工程前沿技术研讨会暨第六届国际水合物青年论坛"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 8 月 16—18 日"},{"label":"地点","value":"中国·贵阳"}],"blog":{"title":"2026 深水油气会议游记","url":"/2026/08/23/会议游记/"},"model_version":"back16"},{"id":"well-control-delegate-2026","tier":"bronze","title":"2026 井控安全学术交流会参会证","display_date":"2026.09","description":"我们能顺利毕业吗，或许能，或许不能。","image":"/images/collection/well-control-delegate-2026.png","model":"/models/collection/well-control-delegate-2026/well-control-delegate-2026.glb","model_version":"well17","facts":[{"label":"活动","value":"首届全国油气与煤层气井控安全理论和新技术学术交流会"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 9 月 16—17 日"},{"label":"地点","value":"中国·青岛"}]}];
 </script>
 <script type="module" src="/js/model-viewer.min.js"></script>
-<script src="/js/collection.js?v=release19" defer></script>
+<script src="/js/collection-detail-patterns.js?v=release20" defer></script>
+<script src="/js/collection.js?v=release20" defer></script>
 <script src="/js/collection-tiers.js?v=collection17" defer></script>
 
               </div>

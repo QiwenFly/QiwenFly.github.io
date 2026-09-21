@@ -11,6 +11,27 @@
   const model = dialog.querySelector('model-viewer'), status = dialog.querySelector('.collection-load-state'), close = dialog.querySelector('.collection-viewer-close');
   const buttons = [...dialog.querySelectorAll('[data-view]')];
   const flipButton = dialog.querySelector('.collection-model-flip');
+  const shell = dialog.querySelector('.collection-viewer-shell');
+  const tierNames = { bronze: 'BRONZE', silver: 'SILVER', gold: 'GOLD' };
+  const decorationSlots = {
+    stageFrame: dialog.querySelector('.collection-detail-stage-frame'),
+    stageLaurel: dialog.querySelector('.collection-detail-stage-laurel'),
+    infoFrame: dialog.querySelector('.collection-detail-info-frame'),
+    infoLaurel: dialog.querySelector('.collection-detail-info-laurel')
+  };
+  let decoratedTier = '';
+  function setDetailTier(value) {
+    const tier = Object.prototype.hasOwnProperty.call(tierNames, value) ? value : 'bronze';
+    shell.dataset.tier = tier;
+    dialog.querySelector('.collection-detail-tier').textContent = tierNames[tier];
+    if (decoratedTier === tier) return;
+    const patterns = window.COLLECTION_DETAIL_PATTERNS?.[tier];
+    if (!patterns) return;
+    // These fragments are generated locally from our SVG artwork, never from
+    // item descriptions or other user-provided HTML.
+    Object.entries(decorationSlots).forEach(([key, el]) => { el.innerHTML = patterns[key]; });
+    decoratedTier = tier;
+  }
   let trigger, current = 'card', reverse = false, zoomGoal = null, lastWheel = 0;
   let expectedSource = '', loadedSource = '';
   const absoluteUrl = url => new URL(url, location.href).href;
@@ -37,6 +58,7 @@
     const item = items[index]; if (!item) return;
     current = 'card'; reverse = false;
     trigger = wall.querySelector(`[data-collection-index="${index}"]`);
+    setDetailTier(item.tier);
     dialog.querySelector('.collection-info-title').textContent = item.title;
     dialog.querySelector('.collection-info-date').textContent = item.display_date || '';
     dialog.querySelector('.collection-info-description').textContent = item.description || '';

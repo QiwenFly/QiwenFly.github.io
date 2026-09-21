@@ -1,0 +1,181 @@
+/* Tiered frames and laurels for the collection detail viewer. */
+.collection-viewer-shell {
+  --detail-metal: #b78661;
+  --detail-stage-metal: #aa744c;
+  --detail-info-metal: #cc9a70;
+  --detail-paper: #ece9e2;
+  --detail-paper-center: #f6f4ef;
+  --detail-panel: #1b272d;
+  --detail-info-padding: 38px;
+  box-sizing: border-box;
+  isolation: isolate;
+  border: 1px solid var(--detail-metal);
+  border-color: color-mix(in srgb, var(--detail-metal) 27%, transparent);
+}
+
+.collection-viewer-shell[data-tier="silver"] {
+  --detail-metal: #b2c0ce;
+  --detail-stage-metal: #6c879e;
+  --detail-info-metal: #bac9d9;
+  --detail-paper: #e8ebec;
+  --detail-paper-center: #f5f6f6;
+  --detail-panel: #1b2730;
+}
+
+.collection-viewer-shell[data-tier="gold"] {
+  --detail-metal: #c9a861;
+  --detail-stage-metal: #ad8735;
+  --detail-info-metal: #d5b765;
+  --detail-paper: #efebdf;
+  --detail-paper-center: #faf8f0;
+  --detail-panel: #232a2a;
+}
+
+.collection-viewer-shell .collection-model-panel {
+  background: var(--detail-paper);
+}
+
+.collection-viewer-shell .collection-model-stage {
+  isolation: isolate;
+  background: radial-gradient(ellipse at 46% 42%, var(--detail-paper-center), var(--detail-paper) 75%);
+}
+
+.collection-viewer-shell .collection-detail-decoration {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.collection-viewer-shell .collection-detail-decoration svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.collection-viewer-shell .collection-detail-stage-frame,
+.collection-viewer-shell .collection-detail-stage-laurel {
+  color: var(--detail-stage-metal);
+}
+
+.collection-viewer-shell .collection-model-viewer {
+  position: relative;
+  z-index: 1;
+  --progress-bar-color: var(--detail-metal);
+}
+
+.collection-viewer-shell .collection-stage-label,
+.collection-viewer-shell .collection-load-state,
+.collection-viewer-shell .collection-view-controls,
+.collection-viewer-shell .collection-model-hint,
+.collection-viewer-shell .collection-model-reset {
+  z-index: 2;
+}
+
+.collection-viewer-shell .collection-info {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  background: var(--detail-panel);
+  padding: 0;
+}
+
+.collection-viewer-shell .collection-info-inner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 58px var(--detail-info-padding) 36px;
+}
+
+.collection-viewer-shell .collection-detail-info-frame {
+  color: var(--detail-info-metal);
+}
+
+.collection-viewer-shell .collection-info-content {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.collection-viewer-shell .collection-info-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  min-height: 24px;
+}
+
+.collection-viewer-shell .collection-info-date,
+.collection-viewer-shell .collection-blog-link i {
+  color: var(--detail-metal);
+}
+
+.collection-viewer-shell .collection-detail-tier {
+  flex: 0 0 auto;
+  border: 1px solid var(--detail-metal);
+  border-color: color-mix(in srgb, var(--detail-metal) 32%, transparent);
+  border-radius: 3px;
+  padding: 7px 9px;
+  color: var(--detail-metal);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .2em;
+}
+
+/* The laurel follows the content, so long text and blog links remain clear. */
+.collection-viewer-shell .collection-detail-info-laurel {
+  position: relative;
+  z-index: 0;
+  display: block;
+  flex: 0 0 auto;
+  width: calc(100% + var(--detail-info-padding) + var(--detail-info-padding));
+  margin: auto calc(0px - var(--detail-info-padding)) 0;
+  color: var(--detail-info-metal);
+  pointer-events: none;
+}
+
+.collection-viewer-shell .collection-detail-info-laurel:empty {
+  display: none;
+}
+
+.collection-viewer-shell .collection-detail-info-laurel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .collection-viewer-shell {
+    --detail-info-padding: 25px;
+  }
+
+  .collection-viewer-shell .collection-info-inner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .collection-viewer-shell {
+    --detail-info-padding: 26px;
+  }
+
+  .collection-viewer-shell .collection-info {
+    overflow: visible;
+  }
+
+  .collection-viewer-shell .collection-info-inner {
+    min-height: 0;
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+}
