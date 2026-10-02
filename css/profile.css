@@ -199,6 +199,23 @@
   font-size: 0.94rem;
 }
 
+.profile-education-note {
+  margin-top: 7px;
+}
+
+.profile-education-note p {
+  color: var(--text-color);
+}
+
+.profile-education-note a {
+  color: var(--profile-accent);
+}
+
+.profile-education-note a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .profile-awards {
   margin: 0;
   padding-left: 24px;
