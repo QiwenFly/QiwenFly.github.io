@@ -1,0 +1,325 @@
+/* This page uses the existing Fluid navigation and color scheme. */
+.profile-page {
+  --profile-accent: #299b8a;
+  --profile-rule: rgba(113, 128, 150, 0.18);
+  background: var(--board-bg-color);
+}
+
+.profile-page .profile-header {
+  height: 72px;
+}
+
+.profile-page #navbar,
+.profile-page #navbar.top-nav-collapse {
+  background: var(--board-bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.profile-page #navbar .navbar-brand,
+.profile-page #navbar .nav-link {
+  color: var(--text-color);
+}
+
+.profile-page #navbar .nav-link:hover {
+  color: var(--profile-accent);
+}
+
+.profile-page #navbar .animated-icon span {
+  background: var(--text-color);
+}
+
+.profile-page .my-floating-social {
+  position: static;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto 24px;
+}
+
+.profile-shell {
+  width: calc(100% - 64px);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 0 72px;
+  color: var(--text-color);
+  line-height: 1.75;
+}
+
+.profile-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 28px;
+  margin-bottom: 26px;
+  font-size: 0.94rem;
+}
+
+.profile-nav a,
+.profile-social a {
+  color: var(--profile-accent);
+}
+
+.profile-nav a:hover,
+.profile-social a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.profile-shell a:focus-visible {
+  outline: 2px solid var(--profile-accent);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+.profile-overview,
+.profile-section {
+  scroll-margin-top: 88px;
+}
+
+.profile-overview {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 54px;
+  align-items: center;
+  padding-bottom: 38px;
+}
+
+.profile-photo img {
+  display: block;
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  background: var(--body-bg-color);
+}
+
+.profile-summary h1 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.profile-alias {
+  color: var(--sec-text-color);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.profile-full-name {
+  min-width: 0;
+}
+
+.profile-introduction p {
+  margin: 0 0 18px;
+}
+
+.profile-social {
+  font-size: 0.95rem;
+}
+
+.profile-social i {
+  margin-right: 4px;
+}
+
+.profile-section {
+  border-top: 1px solid var(--profile-rule);
+  padding-top: 28px;
+  margin-top: 0;
+}
+
+.profile-section + .profile-section {
+  margin-top: 30px;
+}
+
+.profile-section h2 {
+  display: table;
+  margin: 0 0 26px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--profile-accent);
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.profile-education-item {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+  padding: 0 0 24px;
+}
+
+.profile-education-item:last-child {
+  padding-bottom: 0;
+}
+
+.profile-period {
+  margin-bottom: 4px;
+  color: var(--sec-text-color);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.profile-university-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-university-logo img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.profile-education-detail {
+  border-left: 1px solid var(--profile-rule);
+  padding-left: 22px;
+}
+
+.profile-education-detail h3 {
+  margin: 0 0 5px;
+  font-size: 1.24rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.profile-education-detail p,
+.profile-awards p {
+  color: var(--sec-text-color);
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.profile-awards {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.profile-awards li {
+  padding-left: 10px;
+  margin-bottom: 22px;
+}
+
+.profile-awards li:last-child {
+  margin-bottom: 0;
+}
+
+.profile-awards li::marker {
+  color: var(--sec-text-color);
+}
+
+.profile-awards h3 {
+  margin: 0 0 5px;
+  font-size: 1.06rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.profile-medal {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 1px 9px;
+  border-radius: 4px;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+
+.profile-medal--silver {
+  color: #53657b;
+  background: #edf0f4;
+}
+
+.profile-medal--bronze,
+.profile-medal--third {
+  color: #966440;
+  background: #f6ede5;
+}
+
+[data-user-color-scheme="dark"] .profile-page {
+  --profile-accent: #76c7b9;
+  --profile-rule: rgba(167, 169, 173, 0.2);
+}
+
+[data-user-color-scheme="dark"] .profile-medal--silver {
+  color: #ccd6e4;
+  background: #303c4b;
+}
+
+[data-user-color-scheme="dark"] .profile-medal--bronze,
+[data-user-color-scheme="dark"] .profile-medal--third {
+  color: #e5bd9d;
+  background: #43362e;
+}
+
+@media (max-width: 767.98px) {
+  .profile-shell {
+    width: calc(100% - 40px);
+    padding: 14px 0 56px;
+  }
+
+  .profile-nav {
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .profile-overview {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .profile-photo img {
+    width: 192px;
+    height: 240px;
+    margin: 0 auto;
+  }
+
+  .profile-summary h1 {
+    justify-content: center;
+    font-size: 1.75rem;
+  }
+
+  .profile-education-item {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .profile-university-logo img {
+    width: 72px;
+    height: 72px;
+    padding: 5px;
+  }
+
+  .profile-education-detail {
+    padding-left: 14px;
+  }
+
+  .profile-education-detail h3 {
+    font-size: 1.12rem;
+  }
+
+  .profile-period,
+  .profile-education-detail p {
+    font-size: 0.88rem;
+  }
+
+  .profile-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .profile-medal {
+    margin-left: 7px;
+  }
+
+}
