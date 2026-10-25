@@ -283,7 +283,7 @@ table td {
 
 
 /* =========================================
-   四、 “专题”分类与标签聚合页
+   四、 “文集”分类、标签与年份聚合页
 ========================================= */
 
 .topics-tabs {
@@ -331,6 +331,90 @@ table td {
   margin: 0 10px;
 }
 
+.year-total {
+  margin: 0 0 1.5rem;
+  color: var(--sec-text-color);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.year-group {
+  margin-bottom: 1rem;
+  border: 1px solid var(--line-color);
+  border-radius: 12px;
+  scroll-margin-top: 90px;
+}
+
+.year-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.2s;
+}
+
+.year-heading::-webkit-details-marker {
+  display: none;
+}
+
+.year-heading:hover {
+  background: rgba(26, 188, 156, 0.08);
+}
+
+.year-heading:focus-visible {
+  outline: 2px solid #1abc9c;
+  outline-offset: 3px;
+}
+
+.year-label {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.year-count {
+  color: var(--sec-text-color);
+  font-size: 0.9rem;
+}
+
+.year-arrow {
+  margin-left: auto;
+  color: var(--sec-text-color);
+  transition: transform 0.2s;
+}
+
+.year-group[open] .year-arrow {
+  transform: rotate(90deg);
+}
+
+.year-posts {
+  padding: 0 1.25rem 0.5rem;
+}
+
+.year-post {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--line-color);
+  line-height: 1.65;
+}
+
+.year-post time {
+  flex: 0 0 3.2rem;
+  color: var(--sec-text-color);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.year-post span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 [data-user-color-scheme="dark"] .topics-tabs .nav-link {
   border-color: rgba(255, 255, 255, 0.12);
   color: #c4c6c9;
@@ -344,12 +428,32 @@ table td {
 
 @media (max-width: 575.98px) {
   .topics-tabs {
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .topics-tabs .nav-item {
+    flex: 1;
+    min-width: 0;
   }
 
   .topics-tabs .nav-link {
-    min-width: 130px;
-    padding: 0.7rem 1.2rem;
+    min-width: 0;
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .year-heading {
+    padding: 0.85rem 1rem;
+  }
+
+  .year-posts {
+    padding: 0 1rem 0.4rem;
+  }
+
+  .year-post {
+    gap: 0.6rem;
   }
 }
 
