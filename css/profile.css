@@ -256,6 +256,16 @@
   background: #edf0f4;
 }
 
+.profile-medal--gold {
+  color: #805b16;
+  background: #fbf1d8;
+}
+
+.profile-award-description {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
 .profile-medal--bronze,
 .profile-medal--third {
   color: #966440;
@@ -270,6 +280,11 @@
 [data-user-color-scheme="dark"] .profile-medal--silver {
   color: #ccd6e4;
   background: #303c4b;
+}
+
+[data-user-color-scheme="dark"] .profile-medal--gold {
+  color: #f0d38c;
+  background: #463d28;
 }
 
 [data-user-color-scheme="dark"] .profile-medal--bronze,
