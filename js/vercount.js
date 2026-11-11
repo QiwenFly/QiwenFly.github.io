@@ -8,8 +8,8 @@
 
   const siteOrigin = 'https://qiwenfly.github.io';
   const pageUrl = siteOrigin + window.location.pathname;
-  const cacheKey = 'qiwen-vercount:' + pageUrl;
-  const cookieName = 'vercount_uv_qiwenfly_github_io';
+  const cacheKey = 'qiwen-vercount-reset-20261111:' + pageUrl;
+  const cookieName = 'vercount_uv_qiwenfly_github_io_reset_20261111';
 
   function showCounts(counts) {
     for (const name of ['site_pv', 'site_uv', 'page_pv']) {
