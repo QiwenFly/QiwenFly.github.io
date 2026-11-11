@@ -362,6 +362,7 @@
 <link rel="stylesheet" href="/css/collection-base.css?v=release19">
 <link rel="stylesheet" href="/css/collection-foil.css?v=release19">
 <link rel="stylesheet" href="/css/collection-detail.css?v=release20">
+<link rel="stylesheet" href="/css/collection-certificate.css?v=certificate21">
 <section class="collection-page" aria-label="收藏墙">
   <header class="collection-intro">
     <div>
@@ -406,6 +407,22 @@
         </span>
       </button>
     
+      
+      <button class="collection-item" data-tier="bronze" type="button" data-collection-index="2"
+              aria-label="查看藏品：2026 创造太阳文化建设基金捐赠证书">
+        <span class="collection-card-meta" aria-hidden="true"><span>PERSONAL<br>COLLECTION</span><span>藏品档案<br>NO. 003</span></span>
+        <span class="collection-engraving" aria-hidden="true"></span>
+        <span class="collection-foil-light" aria-hidden="true"></span>
+        <span class="collection-tier-name">BRONZE</span>
+        <span class="collection-item-object">
+          <img src="/images/collection/create-sun-donation-2026.jpeg" srcset="/img/loading.gif" lazyload alt="2026 创造太阳文化建设基金捐赠证书" loading="lazy" decoding="async">
+        </span>
+        <span class="collection-item-caption">
+          <strong title="2026 创造太阳文化建设基金捐赠证书">2026 创造太阳文化建设基金捐赠证书</strong>
+          <small>2026.11</small>
+        </span>
+      </button>
+    
   </div>
 </section>
 
@@ -427,6 +444,15 @@
                       exposure="1" tone-mapping="neutral"
                       environment-image="neutral"
                       interaction-prompt="none"></model-viewer>
+        <div class="collection-certificate-viewport" hidden tabindex="0" role="group" aria-label="证书图片，可放大查看">
+          <img class="collection-certificate-image" alt="" draggable="false">
+        </div>
+        <div class="collection-certificate-controls" hidden aria-label="证书缩放">
+          <button type="button" data-certificate-zoom="out" aria-label="缩小证书">−</button>
+          <span class="collection-certificate-scale" aria-live="polite">100%</span>
+          <button type="button" data-certificate-zoom="in" aria-label="放大证书">＋</button>
+          <button type="button" data-certificate-zoom="reset">适应窗口</button>
+        </div>
         <p class="collection-load-state" role="status">正在载入藏品…</p>
         <div class="collection-view-controls" aria-label="观察视角">
           <button type="button" data-view="card" aria-pressed="true">证件</button>
@@ -464,11 +490,11 @@
 </div>
 
 <script>
-  window.COLLECTION_ITEMS = [{"id":"deepwater-forum-delegate-2026","tier":"bronze","title":"2026 深水油气会议参会代表证","display_date":"2026.08","description":"哦！\n这是一个尝试，\n这是一个美好的开始。","image":"/images/collection/deepwater-forum-delegate-2026-fine13.png","model":"/models/collection/deepwater-forum-delegate-2026/deepwater-forum-delegate-2026.glb","facts":[{"label":"活动","value":"第七届国际深水深层油气工程前沿技术研讨会暨第六届国际水合物青年论坛"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 8 月 16—18 日"},{"label":"地点","value":"中国·贵阳"}],"blog":{"title":"2026 深水油气会议游记","url":"/2026/08/23/会议游记/"},"model_version":"back16"},{"id":"well-control-delegate-2026","tier":"bronze","title":"2026 井控安全学术交流会参会证","display_date":"2026.09","description":"我们能顺利毕业吗，或许能，或许不能。","image":"/images/collection/well-control-delegate-2026.png","model":"/models/collection/well-control-delegate-2026/well-control-delegate-2026.glb","model_version":"well17","facts":[{"label":"活动","value":"首届全国油气与煤层气井控安全理论和新技术学术交流会"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 9 月 16—17 日"},{"label":"地点","value":"中国·青岛"}]}];
+  window.COLLECTION_ITEMS = [{"id":"deepwater-forum-delegate-2026","tier":"bronze","title":"2026 深水油气会议参会代表证","display_date":"2026.08","description":"哦！\n这是一个尝试，\n这是一个美好的开始。","image":"/images/collection/deepwater-forum-delegate-2026-fine13.png","model":"/models/collection/deepwater-forum-delegate-2026/deepwater-forum-delegate-2026.glb","facts":[{"label":"活动","value":"第七届国际深水深层油气工程前沿技术研讨会暨第六届国际水合物青年论坛"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 8 月 16—18 日"},{"label":"地点","value":"中国·贵阳"}],"blog":{"title":"2026 深水油气会议游记","url":"/2026/08/23/会议游记/"},"model_version":"back16"},{"id":"well-control-delegate-2026","tier":"bronze","title":"2026 井控安全学术交流会参会证","display_date":"2026.09","description":"我们能顺利毕业吗，或许能，或许不能。","image":"/images/collection/well-control-delegate-2026.png","model":"/models/collection/well-control-delegate-2026/well-control-delegate-2026.glb","model_version":"well17","facts":[{"label":"活动","value":"首届全国油气与煤层气井控安全理论和新技术学术交流会"},{"label":"身份","value":"参会代表"},{"label":"时间","value":"2026 年 9 月 16—17 日"},{"label":"地点","value":"中国·青岛"}]},{"id":"create-sun-donation-2026","kind":"image","tier":"bronze","title":"2026 创造太阳文化建设基金捐赠证书","display_date":"2026.11","description":"支持古镇口校区《创造太阳》雕塑及校园文化建设。","image":"/images/collection/create-sun-donation-2026.jpeg","facts":[{"label":"项目","value":"创造太阳文化建设基金"},{"label":"金额","value":"7.50 元"},{"label":"时间","value":"2026 年 11 月 10 日"},{"label":"颁发","value":"中国石油大学教育发展基金会"}],"blog":{"label":"捐赠背景","title":"“创造太阳”文化建设","url":"https://mp.weixin.qq.com/s/eQzKa-_QPcDVUCaZS_w9tw"}}];
 </script>
 <script type="module" src="/js/model-viewer.min.js"></script>
 <script src="/js/collection-detail-patterns.js?v=release20" defer></script>
-<script src="/js/collection.js?v=release20" defer></script>
+<script src="/js/collection.js?v=certificate21" defer></script>
 <script src="/js/collection-tiers.js?v=collection17" defer></script>
 
               </div>

@@ -12,6 +12,53 @@
   const buttons = [...dialog.querySelectorAll('[data-view]')];
   const flipButton = dialog.querySelector('.collection-model-flip');
   const shell = dialog.querySelector('.collection-viewer-shell');
+  const certificateViewport = dialog.querySelector('.collection-certificate-viewport');
+  const certificateImage = dialog.querySelector('.collection-certificate-image');
+  const certificateControls = dialog.querySelector('.collection-certificate-controls');
+  const modelControls = dialog.querySelector('.collection-view-controls');
+  const hint = dialog.querySelector('.collection-model-hint');
+  let imageMode = false, imageScale = 1, imageX = 0, imageY = 0, imageDrag = null;
+  function renderCertificate() {
+    const maxX = certificateViewport.clientWidth * (imageScale - 1) / 2;
+    const maxY = certificateViewport.clientHeight * (imageScale - 1) / 2;
+    imageX = Math.max(-maxX, Math.min(maxX, imageX));
+    imageY = Math.max(-maxY, Math.min(maxY, imageY));
+    certificateImage.style.transform = `translate(${imageX}px, ${imageY}px) scale(${imageScale})`;
+    dialog.querySelector('.collection-certificate-scale').textContent = Math.round(imageScale * 100) + '%';
+    certificateControls.querySelector('[data-certificate-zoom="out"]').disabled = imageScale <= 1;
+    certificateControls.querySelector('[data-certificate-zoom="in"]').disabled = imageScale >= 4;
+  }
+  function resetCertificate() { imageScale = 1; imageX = imageY = 0; renderCertificate(); }
+  function zoomCertificate(factor) { imageScale = Math.max(1, Math.min(4, imageScale * factor)); renderCertificate(); }
+  certificateControls.addEventListener('click', e => {
+    const action = e.target.closest('[data-certificate-zoom]')?.dataset.certificateZoom;
+    if (action === 'reset') resetCertificate();
+    else if (action) zoomCertificate(action === 'in' ? 1.25 : .8);
+  });
+  certificateViewport.addEventListener('wheel', e => { if (!imageMode) return; e.preventDefault(); zoomCertificate(Math.exp(-Math.max(-120, Math.min(120, e.deltaY)) * .002)); }, {passive:false});
+  certificateViewport.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    imageDrag = {id:e.pointerId,x:e.clientX,y:e.clientY,left:imageX,top:imageY};
+    certificateViewport.setPointerCapture(e.pointerId);
+  });
+  certificateViewport.addEventListener('pointermove', e => {
+    if (!imageDrag || imageDrag.id !== e.pointerId) return;
+    imageX = imageDrag.left + e.clientX - imageDrag.x; imageY = imageDrag.top + e.clientY - imageDrag.y; renderCertificate();
+  });
+  ['pointerup','pointercancel','lostpointercapture'].forEach(type => certificateViewport.addEventListener(type, () => { imageDrag = null; }));
+  certificateViewport.addEventListener('keydown', e => {
+    if (['+','=','-','0','ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) e.preventDefault();
+    if (e.key === '+' || e.key === '=') zoomCertificate(1.25);
+    if (e.key === '-') zoomCertificate(.8);
+    if (e.key === '0') resetCertificate();
+    if (e.key === 'ArrowLeft') imageX += 35;
+    if (e.key === 'ArrowRight') imageX -= 35;
+    if (e.key === 'ArrowUp') imageY += 35;
+    if (e.key === 'ArrowDown') imageY -= 35;
+    renderCertificate();
+  });
+  certificateImage.addEventListener('load', () => { if (imageMode) {status.hidden = true;resetCertificate();} });
+  certificateImage.addEventListener('error', () => { if (imageMode) {status.hidden = false;status.textContent = '证书图片未能载入，请刷新重试。';} });
   const tierNames = { bronze: 'BRONZE', silver: 'SILVER', gold: 'GOLD' };
   const decorationSlots = {
     stageFrame: dialog.querySelector('.collection-detail-stage-frame'),
@@ -65,10 +112,26 @@
     const facts = dialog.querySelector('.collection-info-facts'); facts.replaceChildren();
     (item.facts || []).forEach(f => {const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');dt.textContent = f.label;dd.textContent = f.value;row.append(dt, dd);facts.append(row);});
     const blog = dialog.querySelector('.collection-blog-link');blog.hidden = !(item.blog && item.blog.url);
+    blog.querySelector('small').textContent = item.blog?.label || '相关记录';
     if (!blog.hidden) {blog.href = item.blog.url;blog.querySelector('strong').textContent = item.blog.title;}
     else {blog.removeAttribute('href');blog.querySelector('strong').textContent = '';}
     dialog.querySelector('.collection-info').scrollTop = 0;
     dialog.classList.add('is-open'); dialog.setAttribute('aria-hidden', 'false');document.body.classList.add('collection-viewer-open');
+    shell.scrollTop = 0;
+    imageMode = item.kind === 'image';
+    shell.dataset.kind = imageMode ? 'image' : 'model';
+    certificateViewport.hidden = certificateControls.hidden = !imageMode;
+    model.hidden = modelControls.hidden = imageMode;
+    dialog.querySelector('.collection-model-panel').setAttribute('aria-label', imageMode ? '可放大证书图片' : '可旋转藏品模型');
+    hint.textContent = imageMode ? '滚轮或＋放大 · 拖动查看细节' : '拖动翻看 · 指向细节后滚轮放大';
+    if (imageMode) {
+      expectedSource = '';
+      certificateImage.alt = item.title;
+      status.hidden = true;
+      resetCertificate();
+      certificateImage.src = item.detail_image || item.image;
+      return;
+    }
     model.hidden = false; model.alt = item.title + '，可拖动旋转';
     const src = item.model + '?v=' + encodeURIComponent(item.model_version || 'back16');
     expectedSource = absoluteUrl(src);
@@ -88,7 +151,7 @@
     loadedSource = expectedSource;
     status.hidden = true; model.style.visibility = ''; view(current, true);
   });
-  model.addEventListener('error', () => {status.hidden = false;status.textContent = '模型未能载入，请刷新重试。';});
+  model.addEventListener('error', () => {if (imageMode) return;status.hidden = false;status.textContent = '模型未能载入，请刷新重试。';});
   buttons.forEach(b => b.addEventListener('click', () => view(b.dataset.view)));
   flipButton.addEventListener('click', () => {
     const orbit = model.getCameraOrbit();
@@ -120,14 +183,14 @@
     model.setAttribute('camera-orbit', `${orbit.theta}rad ${orbit.phi}rad ${next}m`);
   }, {capture:true, passive:false});
   model.addEventListener('pointerdown', () => {zoomGoal=null;});
-  dialog.querySelector('.collection-model-reset').addEventListener('click', () => view(current));
+  dialog.querySelector('.collection-model-reset').addEventListener('click', () => imageMode ? resetCertificate() : view(current));
   close.addEventListener('click', hide);
   dialog.addEventListener('click', e => {if (e.target === dialog) hide();});
   document.addEventListener('keydown', e => {
     if (!dialog.classList.contains('is-open')) return;
     if (e.key === 'Escape') hide();
     if (e.key === 'Tab') {
-      const focusable = [...dialog.querySelectorAll('button, a[href], model-viewer')].filter(el => !el.hidden && el.getClientRects().length);
+      const focusable = [...dialog.querySelectorAll('button, a[href], model-viewer, [tabindex="0"]')].filter(el => !el.hidden && !el.disabled && el.getClientRects().length);
       const first = focusable[0], last = focusable[focusable.length - 1];
       if (e.shiftKey && document.activeElement === first) {e.preventDefault();last.focus();}
       else if (!e.shiftKey && document.activeElement === last) {e.preventDefault();first.focus();}

@@ -1,0 +1,11 @@
+.collection-certificate-viewport{position:absolute;inset:65px 68px 105px;z-index:1;overflow:hidden;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;outline-offset:3px}
+.collection-certificate-viewport[hidden],.collection-certificate-controls[hidden],.collection-view-controls[hidden]{display:none}
+.collection-certificate-viewport:active{cursor:grabbing}
+.collection-certificate-image{display:block;width:100%;height:100%;object-fit:contain;user-select:none;transform-origin:center;filter:drop-shadow(0 8px 12px #25334226);will-change:transform}
+.collection-certificate-controls{position:absolute;bottom:46px;left:50%;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:6px;padding:5px;background:#ffffffe0;border:1px solid #fff9;border-radius:28px;white-space:nowrap}
+.collection-certificate-controls button{border:0;background:transparent;border-radius:20px;padding:7px 12px;color:#334c59;cursor:pointer;font-size:15px}
+.collection-certificate-controls button:hover{background:#e8eceb}
+.collection-certificate-scale{font-size:12px;color:#62716e;min-width:42px;text-align:center}
+.collection-certificate-controls button:last-child{border-left:1px solid #c5cac2;border-radius:0 20px 20px 0;font-size:13px}
+@media(max-width:900px){.collection-certificate-viewport{left:35px;right:35px}}
+@media(max-width:650px){.collection-certificate-viewport{inset:55px 30px 100px}.collection-viewer-shell[data-kind=image] .collection-model-panel{height:76dvh;min-height:510px}}
