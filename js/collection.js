@@ -82,10 +82,11 @@
   let trigger, current = 'card', reverse = false, zoomGoal = null, lastWheel = 0;
   let expectedSource = '', loadedSource = '';
   const absoluteUrl = url => new URL(url, location.href).href;
-  const views = {
+  const defaultViews = {
     card: ['0deg 90deg 0.39m', '0m 0.010m 0m'],
     whole: ['-8deg 86deg 1.35m', '0m 0.19m 0m']
   };
+  let views = defaultViews, minimumZoom = .12;
   function view(name, instant) {
     current = name;
     zoomGoal = null;
@@ -132,6 +133,12 @@
       certificateImage.src = item.detail_image || item.image;
       return;
     }
+    views = { ...defaultViews, ...(item.views || {}) };
+    minimumZoom = item.minimum_zoom || .12;
+    model.setAttribute('min-camera-orbit', `auto auto ${Math.min(.08, minimumZoom)}m`);
+    buttons.forEach(button => {
+      button.textContent = item.view_labels?.[button.dataset.view] || (button.dataset.view === 'card' ? '证件' : '完整挂绳');
+    });
     model.hidden = false; model.alt = item.title + '，可拖动旋转';
     const src = item.model + '?v=' + encodeURIComponent(item.model_version || 'back16');
     expectedSource = absoluteUrl(src);
@@ -170,7 +177,7 @@
     const radius = now-lastWheel < 220 && zoomGoal ? zoomGoal.radius : orbit.radius;
     lastWheel = now;
     const pixels = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? 600 : 1);
-    const next = Math.max(.12, Math.min(1.8, radius * Math.exp(Math.max(-120, Math.min(120, pixels)) * .00035)));
+    const next = Math.max(minimumZoom, Math.min(1.8, radius * Math.exp(Math.max(-120, Math.min(120, pixels)) * .00035)));
     const ratio = next / radius, rect = model.getBoundingClientRect();
     const h = radius * Math.tan(model.getFieldOfView() * Math.PI / 360);
     const x = (event.clientX-rect.left-rect.width/2) / (rect.height/2);
